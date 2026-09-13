@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>К-013 — автомойка</title>
+<meta name="description" content="Автомойка К-013: 6 боксов самообслуживания и 2 поста ручной мойки. Мойка, химчистка, подготовка авто к продаже. Круглосуточно. ул. Большакова, 55.">
+<link rel="icon" href="images/logo.jpg" type="image/jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="car-icon" viewBox="0 0 100 60">
+    <path class="car-icon-body" d="M8 44 C8 36 14 33 19 32 L27 20 C30 16 35 14 41 14 L62 14 C69 14 75 17 79 23 L84 32 C90 33 94 37 94 44 L94 47 C94 49 92 50 90 50 L10 50 C8 50 8 49 8 47 Z" fill="currentColor"/>
+    <path class="car-icon-glass" d="M31 30 L37 20 C39 17 42 16 45 16 L45 30 Z M50 16 L61 16 C66 16 70 18 73 22 L77 30 L50 30 Z" fill="var(--ink-900)"/>
+    <circle class="car-icon-wheel" cx="27" cy="48" r="8" fill="var(--ink-900)"/>
+    <circle class="car-icon-wheel" cx="75" cy="48" r="8" fill="var(--ink-900)"/>
+    <path class="car-icon-glint" d="M40 22 L58 22 L52 29 L34 29 Z" fill="#FFFFFF"/>
+  </symbol>
+</svg>
+
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="К-013, на главную">
+      <span class="logo-badge logo-badge--sm" aria-hidden="true">
+        <svg class="car-icon"><use href="#car-icon"></use></svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-code">К‑013</span>
+        <span class="brand-sub">автомойка</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="#price">Прайс</a>
+      <a href="#services">Услуги</a>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="phone-link" href="tel:+79960760000">8&nbsp;996&nbsp;076&nbsp;00&nbsp;00</a>
+      <a class="btn btn-gold header-cta" href="tel:+79960760000">Позвонить</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#price">Прайс</a>
+    <a href="#services">Услуги</a>
+    <a href="#about">О нас</a>
+    <a href="#contacts">Контакты</a>
+    <a class="btn btn-gold" href="tel:+79960760000">Позвонить: 8 996 076 00 00</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="tag">Работаем круглосуточно · 24/7</p>
+        <h1 class="hero-title">
+          Мойка, химчистка<br>
+          и подготовка авто<br>
+          <span class="accent">к продаже</span>
+        </h1>
+        <p class="hero-text">
+          Автомойка «К‑013» на ул. Большакова, 55: 6 боксов самообслуживания и 2 поста ручной мойки,
+          где работают профессионалы. Принимаем в любое время суток.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-gold btn-lg" href="tel:+79960760000">Позвонить</a>
+          <a class="btn btn-outline btn-lg" href="#price">Смотреть прайс</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="logo-badge logo-badge--lg">
+          <svg class="car-icon"><use href="#car-icon"></use></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <section class="price" id="price">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Прайс-лист</h2>
+        <p>Стоимость зависит от класса автомобиля. Позиции «по договорённости» — уточняйте по телефону.</p>
+      </div>
+
+      <div class="price-tabs" role="tablist" aria-label="Класс автомобиля">
+        <button class="price-tab is-active" role="tab" aria-selected="true" data-class="0">Седан</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-class="1">Универсал</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-class="2">Паркетник</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-class="3">Пикап/Джип</button>
+        <button class="price-tab" role="tab" aria-selected="false" data-class="4">Минивэн/Газель</button>
+      </div>
+
+      <div class="table-scroll">
+        <table class="price-table" id="price-table">
+          <caption class="sr-only">Прайс-лист автомойки К-013 по классам автомобилей</caption>
+          <thead>
+            <tr>
+              <th scope="col">Наименование услуги</th>
+              <th scope="col">1 класс<br><span>Седан</span></th>
+              <th scope="col">2 класс<br><span>Универсал</span></th>
+              <th scope="col">3 класс<br><span>Паркетник, бизнес‑класс</span></th>
+              <th scope="col">4 класс<br><span>Пикап, джип</span></th>
+              <th scope="col">5 класс<br><span>Минивэн, газель</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Кузов + салон</th><td>2200 ₽</td><td>2400 ₽</td><td>2600 ₽</td><td>2800 ₽</td><td>4000 ₽</td></tr>
+            <tr><th scope="row">Экспресс с шампунем</th><td>900 ₽</td><td>1000 ₽</td><td>1200 ₽</td><td>1300 ₽</td><td>1500 ₽</td></tr>
+            <tr><th scope="row">Уборка салона</th><td>1100 ₽</td><td>1200 ₽</td><td>1300 ₽</td><td>1500 ₽</td><td>2000 ₽</td></tr>
+            <tr><th scope="row">Мойка кузова двухфазная</th><td>1100 ₽</td><td>1200 ₽</td><td>1300 ₽</td><td>1500 ₽</td><td>2000 ₽</td></tr>
+            <tr><th scope="row">Коврики</th><td>200 ₽</td><td>200 ₽</td><td>200 ₽</td><td>200 ₽</td><td>200–400 ₽</td></tr>
+            <tr><th scope="row">Пылесос салона</th><td>400 ₽</td><td>500 ₽</td><td>600 ₽</td><td>800 ₽</td><td>1000 ₽</td></tr>
+            <tr><th scope="row">Очищение стёкол</th><td>400 ₽</td><td>500 ₽</td><td>600 ₽</td><td>600 ₽</td><td>800 ₽</td></tr>
+            <tr><th scope="row">Багажник</th><td>300 ₽</td><td>400 ₽</td><td>400 ₽</td><td>500 ₽</td><td>600–3000 ₽</td></tr>
+            <tr><th scope="row">Двигатель</th><td>1000 ₽</td><td>1200 ₽</td><td>1400 ₽</td><td>1600 ₽</td><td>2000 ₽</td></tr>
+            <tr><th scope="row">Воск</th><td>300 ₽</td><td>400 ₽</td><td>500 ₽</td><td>700 ₽</td><td>800 ₽</td></tr>
+            <tr><th scope="row">Зимняя обработка</th><td>400 ₽</td><td>400 ₽</td><td>500 ₽</td><td>500 ₽</td><td>500 ₽</td></tr>
+            <tr><th scope="row">Чернение</th><td>400 ₽</td><td>400 ₽</td><td>500 ₽</td><td>600 ₽</td><td>700 ₽</td></tr>
+            <tr><th scope="row">Кондиционер кожи</th><td>600 ₽</td><td>600 ₽</td><td>700 ₽</td><td>700 ₽</td><td>800 ₽</td></tr>
+            <tr><th scope="row">Чистка кожи</th><td>1000 ₽</td><td>1000 ₽</td><td>1200 ₽</td><td>1300 ₽</td><td>1500 ₽</td></tr>
+            <tr><th scope="row">Чистка пластика</th><td>600 ₽</td><td>600 ₽</td><td>700 ₽</td><td>700 ₽</td><td>800 ₽</td></tr>
+            <tr><th scope="row">Полировка салона</th><td>400 ₽</td><td>500 ₽</td><td>500 ₽</td><td>500 ₽</td><td>700 ₽</td></tr>
+            <tr class="price-note-row"><th scope="row">Полировка кузова / покрытие керамикой / жидким мылом</th><td colspan="5">По договорённости</td></tr>
+            <tr><th scope="row">Покрытие кварцем (кузов)</th><td>1000 ₽</td><td>1000 ₽</td><td>1500 ₽</td><td>1500 ₽</td><td>2000 ₽</td></tr>
+            <tr><th scope="row">Антидождь</th><td>1200 ₽</td><td>1200 ₽</td><td>1300 ₽</td><td>1500 ₽</td><td>1500 ₽</td></tr>
+            <tr><th scope="row">Чистка дисков</th><td>1500 ₽</td><td>2000 ₽</td><td>2000 ₽</td><td>2000 ₽</td><td>2000 ₽</td></tr>
+            <tr class="price-note-row"><th scope="row">Удаление битума</th><td colspan="5">По договорённости</td></tr>
+            <tr><th scope="row">Удаление насекомых</th><td>500 ₽</td><td>500 ₽</td><td>600 ₽</td><td>700 ₽</td><td>700 ₽</td></tr>
+            <tr><th scope="row">Химчистка салона (полная)</th><td>от 17000 ₽</td><td>от 17000 ₽</td><td>от 20000 ₽</td><td>от 20000 ₽</td><td>от 20000 ₽</td></tr>
+            <tr><th scope="row">Химчистка дверей (4 двери)</th><td>2000 ₽</td><td>2000 ₽</td><td>2300 ₽</td><td>2500 ₽</td><td>2500 ₽</td></tr>
+            <tr><th scope="row">Химчистка потолка</th><td>5000 ₽</td><td>6000 ₽</td><td>6000 ₽</td><td>8000 ₽</td><td>от 8000 ₽</td></tr>
+            <tr><th scope="row">Химчистка сидений</th><td>6000 ₽</td><td>6000 ₽</td><td>7000 ₽</td><td>от 7000 ₽</td><td>от 7000 ₽</td></tr>
+            <tr><th scope="row">Химчистка напольного покрытия</th><td>6000 ₽</td><td>6000 ₽</td><td>7000 ₽</td><td>от 7000 ₽</td><td>от 7000 ₽</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="price-hint">Листайте таблицу вправо, чтобы увидеть все классы автомобилей.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Чем занимаемся</h2>
+        <p>На мойке 6 боксов самообслуживания и 2 поста ручной мойки, где работают профессионалы —
+           выбирайте формат под свою задачу.</p>
+      </div>
+
+      <div class="perk-strip">
+        <div class="perk"><strong>6</strong><span>боксов самообслуживания</span></div>
+        <div class="perk"><strong>2</strong><span>поста ручной мойки — работают профессионалы</span></div>
+        <div class="perk"><strong>24/7</strong><span>без выходных и праздников</span></div>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 30C8 30 14 16 24 13C31 11 37 14 40 19" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M6 36H42" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="15" cy="36" r="4" stroke="currentColor" stroke-width="3"/>
+            <circle cx="33" cy="36" r="4" stroke="currentColor" stroke-width="3"/>
+            <path d="M4 24L8 22M44 24L40 22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <h3>Мойка</h3>
+          <p>Мойка кузова, экспресс с шампунем, уборка и чистка салона — для ежедневного ухода за машиной любого класса.</p>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M24 6C24 6 34 16 34 26C34 32.6 29.5 38 24 38C18.5 38 14 32.6 14 26C14 16 24 6 24 6Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M12 42H36" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <h3>Химчистка</h3>
+          <p>Глубокая химчистка сидений, потолка, дверей и напольного покрытия — убираем въевшиеся пятна и запахи.</p>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="9" y="9" width="30" height="30" rx="3" stroke="currentColor" stroke-width="3"/>
+            <path d="M16 24L21.5 29.5L33 17" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Подготовка к продаже</h3>
+          <p>Комплексная мойка, полировка и чистка — приводим автомобиль в товарный вид перед продажей.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-inner">
+      <div class="about-copy">
+        <h2>О компании</h2>
+        <p>«К‑013» — автомойка полного цикла: 6 боксов самообслуживания и 2 поста ручной мойки, где работают
+           профессионалы. Мойка кузова и салона, химчистка и подготовка автомобиля к продаже — принимаем машины
+           всех классов, от седана до минивэна и газели, круглосуточно.</p>
+        <ul class="about-facts">
+          <li><span>Режим работы</span><strong>Круглосуточно, 24/7</strong></li>
+          <li><span>Адрес</span><strong>ул. Большакова, 55</strong></li>
+          <li><span>Телефон</span><strong><a href="tel:+79960760000">8 996 076 00 00</a></strong></li>
+          <li><span>Instagram</span><strong><a href="https://www.instagram.com/quickclean_013/" target="_blank" rel="noopener noreferrer">@quickclean_013</a></strong></li>
+        </ul>
+      </div>
+      <div class="about-visual" aria-hidden="true">
+        <div class="logo-badge logo-badge--lg logo-badge--about">
+          <svg class="car-icon"><use href="#car-icon"></use></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="contacts" id="contacts">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Контакты</h2>
+        <p>Звоните, пишите в Instagram или приезжайте — работаем в любое время суток.</p>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="tel:+79960760000">
+          <span class="contact-label">Телефон</span>
+          <span class="contact-value">8 996 076 00 00</span>
+        </a>
+        <div class="contact-card">
+          <span class="contact-label">Адрес</span>
+          <span class="contact-value">ул. Большакова, 55</span>
+        </div>
+        <div class="contact-card">
+          <span class="contact-label">Режим работы</span>
+          <span class="contact-value">Круглосуточно, 24/7</span>
+        </div>
+        <a class="contact-card" href="https://www.instagram.com/quickclean_013/" target="_blank" rel="noopener noreferrer">
+          <span class="contact-label">Instagram</span>
+          <span class="contact-value">@quickclean_013</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="brand" href="#top">
+      <span class="logo-badge logo-badge--xs" aria-hidden="true">
+        <svg class="car-icon"><use href="#car-icon"></use></svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-code">К‑013</span>
+        <span class="brand-sub">автомойка</span>
+      </span>
+    </a>
+    <a class="phone-link" href="tel:+79960760000">8&nbsp;996&nbsp;076&nbsp;00&nbsp;00</a>
+    <a class="phone-link" href="https://www.instagram.com/quickclean_013/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <p class="footer-address">ул. Большакова, 55 · работаем круглосуточно</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
