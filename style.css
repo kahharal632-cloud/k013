@@ -145,38 +145,33 @@ p{ margin: 0; }
   color: var(--text-hi);
 }
 
-/* ---- Logo badge: round chip holding the car-icon, all sizes share it ---- */
-.logo-badge{
+/* Logo lives on a light circular chip so the black line-art stays legible
+   against the dark theme (the source PNG has a transparent background). */
+.logo-mark{
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: linear-gradient(160deg, var(--ink-700), var(--ink-900));
-  border: 1px solid var(--line);
+  background: var(--text-hi);
+  overflow: hidden;
 }
-.logo-badge--xs{ width: 36px; height: 36px; }
-.logo-badge--sm{ width: 44px; height: 44px; }
-.logo-badge--lg{
+.logo-mark img{
   width: 100%;
-  max-width: 320px;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+/* The header/footer mark source is a wide illustration (gun + car), so it
+   needs to be cropped in tight rather than letterboxed at small sizes. */
+.logo-mark-img--cover{ object-fit: cover !important; }
+.logo-mark--xs{ width: 36px; height: 36px; }
+.logo-mark--sm{ width: 44px; height: 44px; }
+.logo-mark--lg{
+  width: 100%;
+  max-width: 300px;
   aspect-ratio: 1 / 1;
-  box-shadow: 0 0 0 10px rgba(232,179,61,0.05);
-}
-.logo-badge--about{ max-width: 260px; }
-
-.car-icon{
-  width: 62%;
-  height: 62%;
-  color: var(--text-hi);
-}
-.car-icon-glint{
-  opacity: 0;
-  animation: car-glint-blink 7s ease-in-out infinite;
-}
-@keyframes car-glint-blink{
-  0%, 52%, 64%, 100%{ opacity: 0; }
-  56%, 58%{ opacity: 1; }
+  box-shadow: 0 0 0 10px rgba(232,179,61,0.06);
 }
 
 .brand-text{ display: flex; flex-direction: column; line-height: 1; }
@@ -269,10 +264,40 @@ p{ margin: 0; }
     var(--ink-800);
 }
 
+/* City skyline sits behind the hero content as a faint horizon line.
+   The source art is black line-work on a white background; inverting it
+   to white-on-black and blending with "screen" makes the black vanish
+   into the dark theme, leaving only pale skyline lines. */
+.hero-skyline{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34%;
+  min-height: 110px;
+  max-height: 220px;
+  background-image: url('images/city-skyline.png');
+  background-repeat: no-repeat;
+  background-position: center 42%;
+  background-size: cover;
+  filter: invert(1);
+  mix-blend-mode: screen;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
 .hero-inner{
+  position: relative;
+  z-index: 1;
   display: grid;
-  gap: 48px;
+  gap: 40px;
   align-items: center;
+}
+
+.hero-visual{
+  order: -1;
+  display: flex;
+  justify-content: center;
 }
 
 .tag{
@@ -314,15 +339,11 @@ p{ margin: 0; }
   margin-top: 32px;
 }
 
-.hero-visual{
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
 @media (min-width: 900px){
   .hero{ padding: 96px 0 120px; }
   .hero-inner{ grid-template-columns: 1.15fr 0.85fr; }
+  .hero-visual{ order: 0; }
+  .logo-mark--lg{ max-width: 320px; }
 }
 
 /* ---------------- Section head ---------------- */
@@ -466,6 +487,27 @@ p{ margin: 0; }
   border-bottom: 1px solid var(--ink-700);
   white-space: nowrap;
 }
+
+/* Freeze the service-name column so it stays visible while the price
+   columns scroll horizontally on narrow screens. */
+.price-table thead th:first-child,
+.price-table tbody th[scope="row"]{
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+.price-table thead th:first-child{ background: var(--ink-700); }
+.price-table tbody th[scope="row"]{ background: var(--ink-800); }
+@media (max-width: 899px){
+  .price-table thead th:first-child,
+  .price-table tbody th[scope="row"]{
+    max-width: 42vw;
+    white-space: normal;
+    line-height: 1.25;
+    box-shadow: 4px 0 8px -4px rgba(0,0,0,0.35);
+  }
+}
+
 .price-table tbody tr:hover td,
 .price-table tbody tr:hover th{
   background: var(--ink-700);
@@ -495,41 +537,38 @@ p{ margin: 0; }
 /* ---------------- About ---------------- */
 
 .about{ padding: 84px 0; background: var(--ink-900); }
-.about-inner{
-  display: grid;
-  gap: 40px;
-  align-items: center;
-}
 .about-copy p{
   margin-top: 18px;
   color: var(--text-mid);
   font-size: 1.02rem;
-  max-width: 56ch;
+  max-width: 62ch;
 }
 .about-facts{
   list-style: none;
-  margin: 30px 0 0;
+  margin: 36px 0 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
 }
 .about-facts li{
   display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--line);
-  max-width: 46ch;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--ink-800);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 20px 22px;
 }
-.about-facts span{ color: var(--text-low); font-size: 0.92rem; }
-.about-facts strong{ font-weight: 700; }
+.about-facts span{ color: var(--text-low); font-size: 0.85rem; }
+.about-facts strong{ font-weight: 700; font-size: 1.1rem; }
 .about-facts a{ color: var(--gold); }
 
-.about-visual{ display: flex; justify-content: center; }
-
-@media (min-width: 860px){
-  .about-inner{ grid-template-columns: 1.1fr 0.9fr; }
+@media (min-width: 640px){
+  .about-facts{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px){
+  .about-facts{ grid-template-columns: repeat(4, 1fr); }
 }
 
 /* ---------------- Contacts ---------------- */
